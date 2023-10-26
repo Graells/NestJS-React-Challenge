@@ -1,5 +1,5 @@
 export interface Coffee {
-  id: number;
+  id?: number;
   title: string;
   description: string;
   imageUrl: string;

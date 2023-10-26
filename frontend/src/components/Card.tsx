@@ -1,15 +1,23 @@
-import React from 'react';
+import { Coffee } from '../context/coffeeTypes';
 
-type Props = {
-  title: string;
-  description: string;
-};
+interface CardProps {
+  coffee: Coffee;
+}
 
-export const Card = ({ title, description }: Props) => {
+const Card: React.FC<CardProps> = ({ coffee }) => {
   return (
-    <div className='border border-black'>
-      <h1 className='text-5xl text-primary'>{title}</h1>
-      <p className='mt-2 text-sm text-grey'>{description}</p>
+    <div>
+      <h1>{coffee.title}</h1>
+      <p>{coffee.description}</p>
     </div>
   );
 };
+
+export default Card;
+
+{
+  /* <div className="border border-black">
+<h1 className="text-5xl text-primary">{coffee.title}</h1>
+<p className="mt-2 text-sm text-grey">{coffee.description}</p>
+</div> */
+}

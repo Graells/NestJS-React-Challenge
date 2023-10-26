@@ -7,9 +7,7 @@ interface CoffeeContextType {
 }
 const defaultContextData = {
   coffees: [],
-  addCoffee: () => {
-    console.warn('addCoffee function not implemented yet');
-  },
+  addCoffee: () => {},
 };
 
 const CoffeeContext = createContext<CoffeeContextType>(defaultContextData);

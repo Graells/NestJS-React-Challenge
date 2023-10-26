@@ -13,8 +13,10 @@ const CoffeeProvider: React.FC<CoffeeProviderProps> = ({ children }) => {
   useEffect(() => {
     const fetchCoffees = async () => {
       try {
-        const response = await getCoffees();
-        setCoffees(response.data);
+        const arrayCoffees = await getCoffees();
+        console.log('fetchCoffeeProvider: ', arrayCoffees);
+
+        setCoffees(arrayCoffees);
       } catch (error) {
         console.error((error as Error).message);
       }
@@ -26,6 +28,7 @@ const CoffeeProvider: React.FC<CoffeeProviderProps> = ({ children }) => {
   const addCoffee = async (coffee: Coffee) => {
     try {
       const newCoffee = await createCoffee(coffee);
+      console.log('addCoffeeProvider: ', newCoffee);
       setCoffees((prevCoffees) => [...prevCoffees, newCoffee]);
     } catch (error) {
       console.error((error as Error).message);
