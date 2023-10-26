@@ -1,22 +1,27 @@
-# Coffee and Tee List - MVST challenge Frontend
+# React + TypeScript + Vite
 
-This is a basic Next.js application. It includes Tailwind for styling, but feel free to use a styling library of choice (or pure CSS!). However, please refrain from using a full-fledged component library like MaterialUI or Bootstrap. We want you to show us your CSS skills! 😎
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Also, we've added some boilerplate code, but (please) feel free to make it your own.
+Currently, two official plugins are available:
 
-## Scripts
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-The following scripts are here to help you get up and running in a development environment as quickly as possible.
+## Expanding the ESLint configuration
 
-### Installation
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-```bash
-$ yarn install
+- Configure the top-level `parserOptions` property like this:
+
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
 ```
 
-### Running the project in development mode
-
-```bash
-# Will run on port 3000
-$ yarn dev
-```
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
