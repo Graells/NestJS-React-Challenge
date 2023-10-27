@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ coffee }) => {
       <img className="cupPic" src={coffee.imageUrl} alt="cupPic" />
       <div className="title">{coffee.title}</div>
       <div className="description">{coffee.description}</div>
-      <div className="price">{coffee.price}</div>
+      <div className="price">{coffee.price} €</div>
     </div>
   );
 };

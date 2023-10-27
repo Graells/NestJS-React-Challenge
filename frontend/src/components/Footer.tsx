@@ -1,11 +1,8 @@
 import React from 'react';
+import '../styles/Footer.css';
 
 const Footer: React.FC = () => {
-  return (
-    <footer style={{ backgroundImage: '../../public/backGroundHeader.jpg' }}>
-      <span>MVST coffee</span>
-    </footer>
-  );
+  return <footer className="footer"></footer>;
 };
 
 export default Footer;

@@ -1,0 +1,11 @@
+.footer {
+  background-image: url('https://mvstcups.s3.eu-north-1.amazonaws.com/backGroundFooter.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 22.74938rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+}

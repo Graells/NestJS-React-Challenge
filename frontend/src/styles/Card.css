@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.2s ease-in-out; /* Optional: Transition for hover effect */
+  transition: transform 0.2s ease-in-out;
 }
 .type-arabic {
   color: #fff;
@@ -44,7 +44,7 @@
 
 .cupPic {
   max-width: 100%;
-  border-radius: 50%; /* This will make the image circular, remove if not needed */
+  border-radius: 50%;
 }
 .title {
   color: #d3ad7f;
