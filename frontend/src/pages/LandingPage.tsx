@@ -6,6 +6,7 @@ import CoffeeGrid from '../components/CoffeeGrid';
 import Footer from '../components/Footer';
 import { Coffee } from '../context/coffeeTypes';
 import CoffeeForm from '../components/CoffeeForm';
+import '../styles/LandingPage.css';
 
 const LandingPage: React.FC = () => {
   const { coffees, addCoffee } = useContext(CoffeeContext);
@@ -22,40 +23,30 @@ const LandingPage: React.FC = () => {
     setFormVisible(false);
   };
   return (
-    <div>
+    <div className="landing-page">
       <Header onButtonCoffee={handleNewCoffee} />
-      {isFormVisible && <CoffeeForm onSubmit={handleSubmitCoffee} />}
-      <h1>Main Title</h1>
-      <button onClick={() => window.scrollTo(0, document.body.scrollHeight)}>
-        Go to Body
-      </button>
-      <CoffeeStatusBar onTypeSelect={(type) => setSelectedType(type)} />
-      <CoffeeGrid
-        coffees={
-          selectedType === 'All'
-            ? coffees
-            : coffees.filter((coffee: Coffee) => coffee.type === selectedType)
-        }
-      />
+      <main>
+        {isFormVisible && (
+          <CoffeeForm
+            onSubmit={handleSubmitCoffee}
+            onDiscard={handleNewCoffee}
+          />
+        )}
+        <CoffeeStatusBar
+          onTypeSelect={(type) => setSelectedType(type)}
+          selectedType={selectedType}
+        />
+        <CoffeeGrid
+          coffees={
+            selectedType === 'All'
+              ? coffees
+              : coffees.filter((coffee: Coffee) => coffee.type === selectedType)
+          }
+        />
+      </main>
       <Footer />
     </div>
   );
 };
 
 export default LandingPage;
-
-// import { Card } from '@/components/Card';
-// import { fetchItems } from '@/services/fetchItems';
-
-// export default async function Home() {
-//   const items = await fetchItems();
-
-//   return (
-//     <main className='mx-10 mt-12 px-10'>
-//       <h1 className='text-3xl mb-10'>You&apos;ve got this! 🚀</h1>
-//       {items.map(({ id, title, description }) => (
-//         <Card key={id} title={title} description={description} />
-//       ))}
-//     </main>
-//   );
-// }

@@ -8,11 +8,10 @@ interface CoffeeGridProps {
 
 const CoffeeGrid: React.FC<CoffeeGridProps> = ({ coffees }) => {
   return (
-    <div>
+    <div className="grid-wrap">
       {coffees.map((coffee) => (
         <Card key={coffee.id} coffee={coffee} />
       ))}
-      {/* {coffees}  */}
     </div>
   );
 };

@@ -1,14 +1,20 @@
 import { Coffee } from '../context/coffeeTypes';
-
+import '../styles/Card.css';
+import blackCup from '../assets/blackCup.png';
+import clearCup from '../assets/clearCup.png';
 interface CardProps {
   coffee: Coffee;
 }
 
 const Card: React.FC<CardProps> = ({ coffee }) => {
+  console.log('pathImg', coffee.imageUrl);
   return (
-    <div>
-      <h1>{coffee.title}</h1>
+    <div className="coffee-card">
+      <div>{coffee.type}</div>
+      <img src={blackCup} alt="cupPic" />
+      <p>{coffee.title}</p>
       <p>{coffee.description}</p>
+      <p>{coffee.price}</p>
     </div>
   );
 };

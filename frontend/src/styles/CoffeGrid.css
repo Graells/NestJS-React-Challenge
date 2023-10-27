@@ -1,0 +1,21 @@
+.grid-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid-wrap > * {
+  flex: 0 0 calc(33.33% - 10px);
+  margin: 5px;
+}
+@media (max-width: 768px) {
+  .grid-wrap > * {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-wrap > * {
+    flex: 0 0 100%;
+  }
+}
