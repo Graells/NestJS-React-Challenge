@@ -1,13 +1,17 @@
 .grid-wrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  max-width: 80.445rem;
+  margin: 0 auto;
 }
 
 .grid-wrap > * {
-  flex: 0 0 calc(33.33% - 10px);
-  margin: 5px;
+  flex: 0 0 33.3333%;
+  max-width: 24.375rem;
+  margin: 0.94rem 1.22rem; /* Top/bottom margin is 0.94rem and left/right margin is half, 0.47rem */
 }
+
 @media (max-width: 768px) {
   .grid-wrap > * {
     flex: 0 0 calc(50% - 10px);

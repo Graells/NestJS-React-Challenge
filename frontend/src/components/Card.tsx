@@ -6,14 +6,18 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ coffee }) => {
-  console.log('URL-Img:', coffee.imageUrl);
+  // console.log('URL-Img:', coffee.imageUrl);
   return (
     <div className="coffee-card">
-      <div>{coffee.type}</div>
-      <img src={coffee.imageUrl} alt="cupPic" />
-      <p>{coffee.title}</p>
-      <p>{coffee.description}</p>
-      <p>{coffee.price}</p>
+      <div
+        className={coffee.type === 'arabic' ? 'type-arabic' : 'type-robusta'}
+      >
+        {coffee.type}
+      </div>
+      <img className="cupPic" src={coffee.imageUrl} alt="cupPic" />
+      <div className="title">{coffee.title}</div>
+      <div className="description">{coffee.description}</div>
+      <div className="price">{coffee.price}</div>
     </div>
   );
 };

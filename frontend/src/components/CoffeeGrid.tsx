@@ -1,7 +1,7 @@
 import React from 'react';
 import { Coffee } from '../context/coffeeTypes';
 import Card from './Card';
-
+import '../styles/CoffeGrid.css';
 interface CoffeeGridProps {
   coffees: Coffee[];
 }
