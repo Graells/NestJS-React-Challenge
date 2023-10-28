@@ -21,22 +21,32 @@ const LandingPage: React.FC = () => {
     addCoffee(coffee);
     setSelectedType('All');
     setFormVisible(false);
+    if (coffeeGridRef.current) {
+      const position = coffeeGridRef.current.offsetHeight;
+      console.log('position:', position);
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    }
   };
+  const coffeeGridRef = React.useRef(null);
+
   return (
     <div className="landing-page">
       <Header onButtonCoffee={handleNewCoffee} />
       <main>
         {isFormVisible && (
-          <CoffeeForm
-            onSubmit={handleSubmitCoffee}
-            onDiscard={handleNewCoffee}
-          />
+          <div className="overlay">
+            <CoffeeForm
+              onSubmit={handleSubmitCoffee}
+              onDiscard={handleNewCoffee}
+            />
+          </div>
         )}
         <CoffeeStatusBar
           onTypeSelect={(type) => setSelectedType(type)}
           selectedType={selectedType}
         />
         <CoffeeGrid
+          ref={coffeeGridRef}
           coffees={
             selectedType === 'All'
               ? coffees

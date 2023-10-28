@@ -13,22 +13,30 @@ interface CoffeeFormProps {
 
 const CoffeeForm: React.FC<CoffeeFormProps> = ({ onSubmit, onDiscard }) => {
   const [title, setTitle] = useState('');
-  const [price, setPrice] = useState(0.0);
+  const [price, setPrice] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [description, setDescription] = useState('');
   const [type, setType] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ title, description, imageUrl, price, type }); //* parse to check her optimal?
+    onSubmit({ title, description, imageUrl, price: parseFloat(price), type }); //* parse to check her optimal?
   };
 
   return (
     <div className="form-container">
+      <div className="top-form">
+        <p className="title-form">CREATE NEW</p>
+        <img
+          className="x-form"
+          src="https://mvstcups.s3.eu-north-1.amazonaws.com/x.png"
+          alt="X"
+          onClick={onDiscard}
+        ></img>
+      </div>
       <form onSubmit={handleSubmit}>
-        <h1>CREATE NEW</h1>
         <div className="name-price-row">
-          <div className="input-group name-input">
+          <div className="name-box">
             <label htmlFor="title">Name</label>
             <input
               type="text"
@@ -39,15 +47,15 @@ const CoffeeForm: React.FC<CoffeeFormProps> = ({ onSubmit, onDiscard }) => {
               required
             />
           </div>
-          <div className="input-group">
+          <div className="price-group">
             <label htmlFor="price">Price</label>
-            <div className="price-input">
-              <span>€</span>
+            <div className="price-box">
+              <span className="euro-symbol">€</span>
               <input
                 type="number"
                 id="price"
                 value={price}
-                onChange={(e) => setPrice(parseFloat(e.target.value))}
+                onChange={(e) => setPrice(e.target.value)}
                 step="0.01"
                 min="0.01"
                 max="999.99"

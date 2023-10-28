@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 3.31rem;
 }
 
 .status-bar p {
@@ -31,6 +32,7 @@
   height: 3.125rem;
   flex-shrink: 0;
   border-radius: 2.0625rem;
+  border: 0;
   text-align: center;
   font-family: Poppins;
   font-size: 1rem;

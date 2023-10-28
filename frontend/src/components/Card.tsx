@@ -6,7 +6,13 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ coffee }) => {
-  // console.log('URL-Img:', coffee.imageUrl);
+  const defaultImageUrl =
+    'https://mvstcups.s3.eu-north-1.amazonaws.com/no-image-availableWhite.png';
+
+  const handleImageError = (event) => {
+    event.target.onerror = null;
+    event.target.src = defaultImageUrl;
+  };
   return (
     <div className="coffee-card">
       <div
@@ -14,19 +20,19 @@ const Card: React.FC<CardProps> = ({ coffee }) => {
       >
         {coffee.type}
       </div>
-      <img className="cupPic" src={coffee.imageUrl} alt="cupPic" />
-      <div className="title">{coffee.title}</div>
-      <div className="description">{coffee.description}</div>
-      <div className="price">{coffee.price} €</div>
+      <img
+        className="cupPic"
+        src={coffee.imageUrl}
+        alt="Coffee picture"
+        onError={handleImageError}
+      />
+      <div className="details">
+        <div className="title">{coffee.title}</div>
+        <div className="description">{coffee.description}</div>
+        <div className="price">{coffee.price} €</div>
+      </div>
     </div>
   );
 };
 
 export default Card;
-
-{
-  /* <div className="border border-black">
-<h1 className="text-5xl text-primary">{coffee.title}</h1>
-<p className="mt-2 text-sm text-grey">{coffee.description}</p>
-</div> */
-}
