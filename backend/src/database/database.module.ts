@@ -11,7 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: '1234',
       database: 'mvst-coffee-challenge-db',
       synchronize: true,
-      logging: true,
+      logging: false,
       entities: ['dist/database/entities/*.entity.js'], //important
     }),
   ],

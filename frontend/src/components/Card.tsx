@@ -9,9 +9,9 @@ const Card: React.FC<CardProps> = ({ coffee }) => {
   const defaultImageUrl =
     'https://mvstcups.s3.eu-north-1.amazonaws.com/no-image-availableWhite.png';
 
-  const handleImageError = (event) => {
-    event.target.onerror = null;
-    event.target.src = defaultImageUrl;
+  const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    event.currentTarget.onerror = null;
+    event.currentTarget.src = defaultImageUrl;
   };
   return (
     <div className="coffee-card">

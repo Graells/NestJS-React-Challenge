@@ -7,6 +7,16 @@ import Footer from '../components/Footer';
 import { Coffee } from '../context/coffeeTypes';
 import CoffeeForm from '../components/CoffeeForm';
 import '../styles/LandingPage.css';
+import { toast } from 'react-toastify';
+enum OperationStatus {
+  SUCCESS,
+  DUPLICATE,
+  ERROR,
+}
+interface CoffeeOperationResult {
+  status: OperationStatus;
+  message?: string;
+}
 
 const LandingPage: React.FC = () => {
   const { coffees, addCoffee } = useContext(CoffeeContext);
@@ -17,14 +27,38 @@ const LandingPage: React.FC = () => {
   const handleNewCoffee = () => {
     setFormVisible(!isFormVisible);
   };
-  const handleSubmitCoffee = (coffee: Coffee) => {
-    addCoffee(coffee);
-    setSelectedType('All');
-    setFormVisible(false);
-    if (coffeeGridRef.current) {
-      const position = coffeeGridRef.current.offsetHeight;
-      console.log('position:', position);
-      window.scrollTo({ top: position, behavior: 'smooth' });
+  const handleSubmitCoffee = async (coffee: Coffee) => {
+    const result: CoffeeOperationResult = await addCoffee(coffee);
+
+    if (result.status === OperationStatus.SUCCESS) {
+      setSelectedType('All');
+      setFormVisible(false);
+      if (coffeeGridRef.current) {
+        const position = coffeeGridRef.current.offsetHeight;
+        window.scrollTo({ top: position, behavior: 'smooth' });
+      }
+    } else if (result.status === OperationStatus.DUPLICATE) {
+      toast.error('A coffee with the same name already exists!', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        draggable: false,
+        progress: undefined,
+        theme: 'colored',
+      });
+      setFormVisible(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (result.status === OperationStatus.ERROR) {
+      toast.error(result.message || 'Unknown error', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        draggable: false,
+        progress: undefined,
+        theme: 'colored',
+      });
     }
   };
   const coffeeGridRef = React.useRef(null);
