@@ -14,13 +14,9 @@
 }
 
 @media (max-width: 768px) {
-  .grid-wrap > * {
-    flex: 0 0 calc(50% - 10px);
-  }
-}
-
-@media (max-width: 480px) {
-  .grid-wrap > * {
-    flex: 0 0 100%;
+  .grid-wrap {
+    width: 20.375rem;
+    flex-direction: column;
+    margin: 0rem 0rem;
   }
 }

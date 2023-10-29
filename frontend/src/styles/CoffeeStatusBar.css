@@ -49,3 +49,20 @@
   background: #383838;
   color: #fff;
 }
+@media only screen and (max-width: 768px) {
+  .status-bar {
+    margin-bottom: 1.5rem;
+  }
+  .status-bar p {
+    font-size: 2rem;
+  }
+
+  .button-wrap {
+    margin-top: 0.5rem;
+    width: 20.4375rem;
+  }
+
+  .button-wrap button {
+    width: 6.0625rem;
+  }
+}

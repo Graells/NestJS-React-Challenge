@@ -10,3 +10,10 @@
   justify-content: center;
   margin-top: 15rem;
 }
+@media (max-width: 768px) {
+  .footer {
+    height: 17.25rem;
+    width: 23.4375rem;
+    margin-top: 6.67rem;
+  }
+}
