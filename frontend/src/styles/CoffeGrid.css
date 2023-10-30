@@ -13,7 +13,13 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1270px) {
+  .grid-wrap {
+    width: 54.222rem;
+  }
+}
+
+@media (max-width: 800px) {
   .grid-wrap {
     width: 20.375rem;
     flex-direction: column;

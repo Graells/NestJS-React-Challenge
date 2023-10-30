@@ -34,7 +34,8 @@ const CoffeeProvider: React.FC<CoffeeProviderProps> = ({ children }) => {
   };
   const addCoffee = async (coffee: Coffee): Promise<CoffeeOperationResult> => {
     const nameAlreadyExists = coffees.some(
-      (existingCoffee) => existingCoffee.title === coffee.title
+      (existingCoffee) =>
+        existingCoffee.title.toLowerCase() === coffee.title.toLowerCase()
     );
     if (nameAlreadyExists) {
       return {

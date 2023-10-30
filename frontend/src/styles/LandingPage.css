@@ -37,8 +37,8 @@ main {
     font-size: 18px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
   .landing-page {
-    max-width: 23.4375rem;
+    max-width: 100%;
   }
 }

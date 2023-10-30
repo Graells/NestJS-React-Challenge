@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
 dotenv.config(); //{ path: 'backend/.env' } ?
-console.log('Database Password:', process.env.DATABASE_PASSWORD);
 import { DataSource, DataSourceOptions } from 'typeorm';
 
 export const createDataSourceOptions = (): DataSourceOptions => {
@@ -16,14 +15,20 @@ export const createDataSourceOptions = (): DataSourceOptions => {
     entities: [__dirname + '/../**/*.entity{.ts,.js}'],
     migrations: [__dirname + '/database/migrations/**/*{.js,.ts}'],
     migrationsTableName: 'coffee_migrations',
+    ssl:
+      process.env.NODE_ENV === 'production'
+        ? { rejectUnauthorized: false }
+        : false,
   };
-  if (process.env.IS_PRODUCTION) {
+  if (process.env.NODE_ENV === 'production') {
     return {
       ...configurations,
       synchronize: false,
     };
   }
-
   return configurations;
 };
 export default new DataSource(createDataSourceOptions());
+
+// dataSource.initialize();
+// await dataSource.connect()

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import CoffeeContext from '../context/coffeeContext';
 import Header from '../components/Header';
 import CoffeeStatusBar from '../components/CoffeeStatusBar';
@@ -61,7 +61,7 @@ const LandingPage: React.FC = () => {
       });
     }
   };
-  const coffeeGridRef = React.useRef(null);
+  const coffeeGridRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className="landing-page">
