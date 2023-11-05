@@ -34,7 +34,7 @@ export class CoffeeService {
     }
     return this.coffeeRepository.save(coffee);
   }
-  createMany(coffees: Coffee[]): Promise<Coffee[]> {
+  createMany(coffees: Partial<Coffee>[]): Promise<Partial<Coffee>[]> {
     return this.coffeeRepository.save(coffees);
   }
 }
