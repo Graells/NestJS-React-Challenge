@@ -53,7 +53,7 @@ describe('CoffeeService', () => {
 
   describe('getOne', () => {
     it('should get a single coffee', async () => {
-      const coffeeId = '9c849310-6212-4501-ae3e-b6092372de68';
+      const coffeeId = mockCoffees[2].id;
       const expectedCoffee = mockCoffees.find((c) => c.id === coffeeId);
       repository.findOne.mockResolvedValue(expectedCoffee);
       const coffee = await service.getOne(coffeeId);
@@ -66,7 +66,7 @@ describe('CoffeeService', () => {
 
   describe('deleteOne', () => {
     it('should call the delete method on the repository', async () => {
-      const coffeeId = 'f1ffd40e-031f-4892-ba21-2f328650d28c';
+      const coffeeId = mockCoffees[3].id;
       repository.delete.mockResolvedValue({ affected: 1 });
       await service.deleteOne(coffeeId);
       expect(repository.delete).toHaveBeenCalledWith(coffeeId);
