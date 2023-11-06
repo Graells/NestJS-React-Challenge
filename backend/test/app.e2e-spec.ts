@@ -16,10 +16,10 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/coffee (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/coffee')
       .expect(200)
-      .expect(sampleData.items);
+      .expect(sampleData.coffee);
   });
 });

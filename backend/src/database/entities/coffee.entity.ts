@@ -9,9 +9,11 @@ import {
 @Entity('coffee')
 export class Coffee {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
 
-  @Column()
+  @Column({
+    unique: true,
+  })
   title: string;
 
   @Column()

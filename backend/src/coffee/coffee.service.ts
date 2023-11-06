@@ -14,11 +14,11 @@ export class CoffeeService {
     return this.coffeeRepository.find();
   }
 
-  getOne(id: number): Promise<Coffee> {
+  getOne(id: string): Promise<Coffee> {
     return this.coffeeRepository.findOne({ where: { id: id } });
   }
 
-  async deleteOne(id: number): Promise<void> {
+  async deleteOne(id: string): Promise<void> {
     await this.coffeeRepository.delete(id);
   }
 
