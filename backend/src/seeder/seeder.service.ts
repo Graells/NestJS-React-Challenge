@@ -6,7 +6,7 @@ import { CoffeeService } from 'src/coffee/coffee.service';
 export class SeederService {
   constructor(private readonly coffeeService: CoffeeService) {}
 
-  async createMany(coffees: Coffee[]): Promise<Coffee[]> {
+  async createMany(coffees: Partial<Coffee>[]): Promise<Partial<Coffee>[]> {
     console.log(`Inserting ${coffees.length} coffee items...`);
     const saved = await this.coffeeService.createMany(coffees);
     console.log('Coffee items successfully inserted.');
