@@ -1,0 +1,28 @@
+.grid-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80.445rem;
+  margin: 0 auto;
+}
+
+.grid-wrap > * {
+  flex: 0 0 24.375rem;
+  height: 29.5rem;
+  margin: 0.94rem 1.22rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1270px) {
+  .grid-wrap {
+    width: 54.222rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .grid-wrap {
+    width: 20.375rem;
+    flex-direction: column;
+    margin: 0rem 0rem;
+  }
+}

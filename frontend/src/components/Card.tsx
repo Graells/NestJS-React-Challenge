@@ -1,15 +1,38 @@
-import React from 'react';
+import { Coffee } from '../context/coffeeTypes';
+import '../styles/Card.css';
 
-type Props = {
-  title: string;
-  description: string;
-};
+interface CardProps {
+  coffee: Coffee;
+}
 
-export const Card = ({ title, description }: Props) => {
+const Card: React.FC<CardProps> = ({ coffee }) => {
+  const defaultImageUrl =
+    'https://mvstcups.s3.eu-north-1.amazonaws.com/no-image-availableWhite.png';
+
+  const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    event.currentTarget.onerror = null;
+    event.currentTarget.src = defaultImageUrl;
+  };
   return (
-    <div className='border border-black'>
-      <h1 className='text-5xl text-primary'>{title}</h1>
-      <p className='mt-2 text-sm text-grey'>{description}</p>
+    <div className="coffee-card">
+      <div
+        className={coffee.type === 'arabic' ? 'type-arabic' : 'type-robusta'}
+      >
+        {coffee.type}
+      </div>
+      <img
+        className="cupPic"
+        src={coffee.imageUrl}
+        alt="Coffee picture"
+        onError={handleImageError}
+      />
+      <div className="details">
+        <div className="title">{coffee.title}</div>
+        <div className="description">{coffee.description}</div>
+        <div className="price">{coffee.price} €</div>
+      </div>
     </div>
   );
 };
+
+export default Card;

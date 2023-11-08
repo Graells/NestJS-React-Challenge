@@ -1,0 +1,262 @@
+.form-container {
+  background: #191919;
+  width: 44.625rem;
+  height: 46.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.form-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15.70838rem;
+  height: 10.50269rem;
+  flex-shrink: 0;
+  background: url('https://mvstcups.s3.eu-north-1.amazonaws.com/png2+2.png')
+    center / cover no-repeat;
+}
+.top-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+.title-form {
+  color: #fff;
+  font-family: Bebas Neue;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.125rem;
+  margin-top: 5.69rem;
+}
+.x-form {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+  cursor: pointer;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 27.625rem;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+label {
+  color: #9b9b9b;
+  font-family: DM Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+}
+input {
+  background-color: #2d2d2d;
+  color: #838382;
+  font-family: DM Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  /* width: 27.625rem; */
+  /* height: 2.375rem; */
+  padding: 0.56rem;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+input:focus {
+  color: #ffffff;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 27.625rem;
+  margin-bottom: 1.56rem;
+  margin-top: 0;
+}
+
+.name-price-row {
+  display: flex;
+  flex-direction: row;
+  /* gap: 1rem; */
+  width: 27.625rem;
+  height: 4.31rem;
+  flex-shrink: 0;
+  margin-bottom: 1.56rem;
+}
+.name-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  width: 19.19rem;
+  margin-right: 1rem;
+}
+.price-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 7.4375rem;
+}
+.price-box {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.price-box input {
+  width: 100%;
+}
+.euro-symbol {
+  position: absolute;
+  right: 0.5rem;
+  top: 1.1875rem;
+  z-index: 1;
+}
+
+.type-selection {
+  display: flex;
+  justify-content: space-between;
+  width: 27.625rem;
+}
+
+.type-selection label {
+  width: 13.5rem;
+  /* height: 2.375rem; */
+  flex-shrink: 0;
+  display: block;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.type-selection input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.type-selection input[type='radio']:checked + label {
+  background: black;
+  border: 1px solid #ffffff;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button {
+  display: flex;
+  width: 7.1875rem;
+  height: 2.8125rem;
+  padding: 0.875rem 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.875rem;
+  cursor: pointer;
+}
+
+button[type='button'] {
+  border-radius: 3.375rem;
+  border: 1px solid #ba8039;
+  background: #191919;
+}
+button[type='button']:hover {
+  background: black;
+  color: white;
+}
+
+button[type='submit'] {
+  border-radius: 3.375rem;
+  border: 1px solid #ba8039;
+  opacity: 0.5;
+  background: #ba8039;
+}
+button[type='submit']:hover {
+  opacity: 1;
+  background: #ba8039;
+  color: white;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .form-container {
+    width: 23.4375rem;
+    height: 52.75rem;
+  }
+  .form-container::after {
+    content: none;
+  }
+
+  .title-form {
+    margin-top: 8.12rem;
+    font-size: 3.125rem;
+  }
+
+  form {
+    width: 20.4375rem;
+  }
+  .input-group {
+    width: 20.375rem;
+  }
+
+  .name-price-row {
+    flex-direction: column;
+    margin: 0;
+    width: 20.375rem;
+    height: 9.625rem;
+  }
+  .name-box {
+    width: 20.375rem;
+    margin-bottom: 1rem;
+  }
+  .price-group {
+    width: 20.375rem;
+  }
+  .type-selection {
+    width: 20.375rem;
+  }
+  .type-selection label {
+    width: 9.875rem;
+  }
+  .button-group {
+    flex-direction: column;
+    margin-top: 4.69rem;
+    margin-bottom: 2.5;
+  }
+  button {
+    width: 20.375rem;
+  }
+}

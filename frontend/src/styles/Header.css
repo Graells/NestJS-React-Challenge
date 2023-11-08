@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 120rem;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://mvstcups.s3.eu-north-1.amazonaws.com/backGroundHeader.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 6.25rem;
+}
+
+.logo {
+  margin-left: 17.844rem;
+  width: 10.419rem;
+  height: 1.555rem;
+  margin-top: 2.701rem;
+  fill: #fafffc;
+}
+
+.create-btn {
+  width: 7.1875rem;
+  height: 2.8125rem;
+  padding: 0.875rem 1rem;
+  gap: 0.625rem;
+  border-radius: 1.875rem;
+  border: 1px solid #ba8039;
+  background: #ba8039;
+  margin-top: 1.6875rem;
+  margin-right: 17.844rem;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.875rem;
+}
+
+.header-box {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 42.5rem;
+  height: 15.0625rem;
+  margin-bottom: 21.63rem;
+  margin-top: 15.31rem;
+  margin-left: 17.81rem;
+  padding: 0;
+}
+
+.big-title {
+  color: #fff;
+  font-family: Bebas Neue;
+  font-size: 8.125rem;
+  margin: 0;
+}
+
+.description {
+  color: #938e8e;
+  font-family: Poppins;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875rem;
+}
+
+.create-own-btn {
+  display: flex;
+  width: 14.625rem;
+  height: 2.8125rem;
+  padding: 0.875rem 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: 1.875rem;
+  border: 1px solid #ba8039;
+  background: #ba8039;
+  margin-top: 1rem;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.875rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    width: 100%;
+    /* 23.4375rem */
+    height: 40.6875rem;
+  }
+
+  .logo {
+    margin-left: 1.5rem;
+    width: auto;
+    height: auto;
+  }
+
+  .create-btn {
+    margin-right: 1.5rem;
+    width: auto;
+  }
+
+  .header-box {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 7.22rem;
+    margin-top: 5rem;
+    align-items: center;
+    width: 100%;
+  }
+  .big-title {
+    font-size: 4rem;
+    text-align: center;
+    width: 13.125rem;
+  }
+  .description {
+    font-size: 1.25rem;
+    text-align: center;
+    width: 16.0625rem;
+  }
+
+  .create-own-btn {
+    margin-top: 1rem;
+    justify-content: center;
+    width: 14.625rem;
+    /* height: 2.8125rem; */
+    padding: 0.875rem 1rem;
+  }
+}
