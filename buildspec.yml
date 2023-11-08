@@ -28,4 +28,3 @@ artifacts:
   files:
     - my-app.zip
   discard-paths: yes
-  base-directory: backend
