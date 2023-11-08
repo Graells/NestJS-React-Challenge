@@ -12,12 +12,12 @@ export class CoffeeController {
   }
 
   @Get(':id')
-  getOne(@Param('id') id: number): Promise<Coffee> {
+  getOne(@Param('id') id: string): Promise<Coffee> {
     return this.coffeeService.getOne(id);
   }
 
   @Delete(':id')
-  async deleteOne(@Param('id') id: number): Promise<void> {
+  async deleteOne(@Param('id') id: string): Promise<void> {
     await this.coffeeService.deleteOne(id);
   }
 
