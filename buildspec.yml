@@ -17,8 +17,10 @@ phases:
     commands:
       - echo "Running tests"
       - yarn test
-      - echo "Copy Procfile and any other config files to the build directory"
+      - echo "Copy necessary files to the dist directory"
       - cp Procfile dist/
+      - cp package.json dist/
+      - cp yarn.lock dist/
       - echo "Packaging the application for Elastic Beanstalk"
       - cd dist
       - zip -r ../my-app.zip .
