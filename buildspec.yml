@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo "Navigate to backend directory"
+      - cd backend
+      - echo "Install dependencies"
+      - yarn install
+  build:
+    commands:
+      - echo "Build the application"
+      - yarn run build
+  post_build:
+    commands:
+      - echo "Running tests"
+      - yarn test
+      - echo "Copy Procfile and any other config files to the build directory"
+      - cp Procfile dist/
+      - echo "Packaging the application for Elastic Beanstalk"
+      - cd dist
+      - zip -r ../my-app.zip .
+artifacts:
+  files:
+    - my-app.zip
+  discard-paths: yes
+  base-directory: backend
