@@ -17,16 +17,8 @@ phases:
     commands:
       - echo "Running tests"
       - yarn test
-      - echo "Packaging the application for Elastic Beanstalk"
-      - cp package.json ./dist
-      - cp yarn.lock ./dist
-      - cp Procfile ./dist
-      - echo "Creating ZIP file"
-      - cd dist
-      - zip -r build.zip .
-      - ls
-
 artifacts:
   files:
-    - '**/*.zip'
+    - '**/*'
+  base-directory: 'backend'
   discard-paths: yes
