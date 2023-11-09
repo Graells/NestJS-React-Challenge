@@ -23,7 +23,8 @@ phases:
       - cp Procfile ./dist
       - echo "Creating ZIP file"
       - zip -r ../../build.zip .
+      - ls -l ../../
 artifacts:
   files:
     - 'build.zip'
-  discard-paths: yes
+  discard-paths: no
