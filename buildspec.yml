@@ -19,7 +19,7 @@ phases:
       - yarn test
       - echo "Packaging the application for Elastic Beanstalk"
       - cd ..
-      - "ZIP_FILE_NAME=myapp-$(date +%Y%m%d-%H%M%S).zip"
+      - "ZIP_FILE_NAME=backend-$(date +%Y%m%d-%H%M%S).zip"
       - echo "Creating ZIP file $ZIP_FILE_NAME"
       - zip -r $ZIP_FILE_NAME backend/
 artifacts:
