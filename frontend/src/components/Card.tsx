@@ -7,7 +7,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ coffee }) => {
   const defaultImageUrl =
-    'https://mvstcups.s3.eu-north-1.amazonaws.com/no-image-availableWhite.png';
+    'https://cupscoffee.s3.eu-west-3.amazonaws.com/no-image-availableWhite.png';
 
   const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
     event.currentTarget.onerror = null;
