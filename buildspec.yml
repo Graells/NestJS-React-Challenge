@@ -17,14 +17,12 @@ phases:
     commands:
       - echo "Running tests"
       - yarn test
-      - echo "Copy necessary files to the dist directory"
-      - cp Procfile dist/
-      - cp package.json dist/
-      - cp yarn.lock dist/
       - echo "Packaging the application for Elastic Beanstalk"
-      - cd dist
-      - zip -r ../my-app.zip .
+      - cd ..
+      - "ZIP_FILE_NAME=myapp-$(date +%Y%m%d-%H%M%S).zip"
+      - echo "Creating ZIP file $ZIP_FILE_NAME"
+      - zip -r $ZIP_FILE_NAME backend/
 artifacts:
   files:
-    - my-app.zip
+    - backend-*.zip
   discard-paths: yes
