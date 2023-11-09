@@ -22,8 +22,10 @@ phases:
       - cp yarn.lock ./dist
       - cp Procfile ./dist
       - echo "Creating ZIP file"
-      - zip -r ../build.zip .
-      - ls -l ../
+      - cd dist
+      - zip -r build.zip .
+      - cd ..
+      - mv build.zip ../..
 artifacts:
   files:
     - './build.zip'
