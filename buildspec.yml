@@ -24,9 +24,8 @@ phases:
       - echo "Creating ZIP file"
       - cd dist
       - zip -r build.zip .
-      - cd ..
-      - mv nodejs.zip ../
+
 artifacts:
   files:
-    - './nodejs.zip'
+    - 'backend/nodejs.zip'
   discard-paths: yes
