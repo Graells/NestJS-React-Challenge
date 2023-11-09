@@ -78,7 +78,7 @@ describe('CoffeeService', () => {
       const newCoffee = {
         title: 'New Coffee',
         description: 'Free in the MSVT office',
-        imageUrl: 'https://mvstcups.s3.eu-north-1.amazonaws.com/blackCup.png',
+        imageUrl: 'https://cupscoffee.s3.eu-west-3.amazonaws.com/blackCup.png',
         price: 20.0,
         type: 'robusta',
       };
@@ -104,14 +104,16 @@ describe('CoffeeService', () => {
         {
           title: 'New Coffee 1',
           description: 'Free in the MSVT office',
-          imageUrl: 'https://mvstcups.s3.eu-north-1.amazonaws.com/blackCup.png',
+          imageUrl:
+            'https://cupscoffee.s3.eu-west-3.amazonaws.com/blackCup.png',
           price: 20.0,
           type: 'robusta',
         },
         {
           title: 'New Coffee 2',
           description: 'Free in the MSVT office',
-          imageUrl: 'https://mvstcups.s3.eu-north-1.amazonaws.com/blackCup.png',
+          imageUrl:
+            'https://cupscoffee.s3.eu-west-3.amazonaws.com/blackCup.png',
           price: 20.0,
           type: 'robusta',
         },

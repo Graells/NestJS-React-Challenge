@@ -40,6 +40,8 @@ Deployed using the following services:
     - ***Deploy***: AWS Elastic Beanstalk receives the entire backend folder, including node_modules. Because I used yarn instead of npm and Elastic Beanstalk defaults to doing npm install, produccing some errors/conflicts with dependencies. If Elastic Beanstalk detects a node_modules already exists, it doesn't install dependencies. It uses the command in Procfile to start the app. Environmental variables are introduced using AWS console.
 - **Frontend**: Netlify.
 
+Tag trigger: (git log ; git tag v[0.0.0] [commit hash]; git push origin v[0.0.0])
+
 ### Backend:
 
 It intends to follow NestJS best practices: modules bundling related logic, services managing business operations, and controllers handling HTTP requests.

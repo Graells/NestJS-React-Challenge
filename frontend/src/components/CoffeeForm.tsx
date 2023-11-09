@@ -29,7 +29,7 @@ const CoffeeForm: React.FC<CoffeeFormProps> = ({ onSubmit, onDiscard }) => {
         <p className="title-form">CREATE NEW</p>
         <img
           className="x-form"
-          src="https://mvstcups.s3.eu-north-1.amazonaws.com/x.png"
+          src="https://cupscoffee.s3.eu-west-3.amazonaws.com/x.png"
           alt="X"
           onClick={onDiscard}
         ></img>
