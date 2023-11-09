@@ -12,7 +12,7 @@ const CoffeeStatusBar: React.FC<CoffeeStatusBarProps> = ({
 }) => {
   return (
     <div className="status-bar">
-      <p>MVST. EXCLUSIVE COFFEE</p>
+      <p>TSVM. EXCLUSIVE COFFEE</p>
       <div className="button-wrap">
         <button
           className={selectedType === 'All' ? 'selected' : ''}

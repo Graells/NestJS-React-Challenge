@@ -1,4 +1,4 @@
-# Coffee and Tee List - MVST challenge Backend
+# Coffee and Tee List - TSVM challenge Backend
 
 ## Scripts
 
@@ -28,7 +28,7 @@ host: 'localhost'
 port: 5432
 username: 'postgres'
 password: '1234'
-database: 'mvst-coffee-challenge-db'
+database: 'coffee-challenge-db'
 ```
 
 ### Running the project in development mode
