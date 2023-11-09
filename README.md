@@ -11,7 +11,7 @@ Required stack:
 - **Frontend**: React (or Vite React)
 - **Styling**: pure CSS or Tailwind (libraries not allowed, to showcase CSS skills.)
 
-###**Instructions:**
+### **Instructions:**
 - UX/UI: You must follow the Figma prototype. (Unfortunately, I can’t provide a link to the Figma file since I don't own it, but the deployed live version is a faithful representation of it.)
 - Following the design, create a new page and place a form to add a new coffee.
 - You should be able to add a new coffee using the same structure/type (id, name, description, type, price and image url).
