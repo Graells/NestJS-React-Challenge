@@ -29,7 +29,8 @@ Required stack:
 
 ### Deployment
 
-View my deployement at: https://roasted-coffee.netlify.app/
+View my deployment at: <s>https://roasted-coffee.netlify.app/</s> // <b style="color: #ff3e00;">Due to AWS Free Tier exhaustion, the live demo doesn't have database and server hosted anymore.</b>
+
 
 Deployed using the following services:
 
